@@ -1,0 +1,159 @@
+.App {
+    text-align: center;
+  }
+  .slider{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .page{
+    display: block;
+  }
+  .image{
+    width: 1000px;
+    height: 600px;
+    border-radius: 10px;
+  }
+  .right-arrow{
+    position: absolute;
+    top: 50%;
+    right: 32px;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
+  .left-arrow{
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
+  .arrows{
+    width: 70px;
+    height: 50px;
+  }
+  
+  .slide{
+    opacity:0;
+    transition-duration: 1s ease;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+  }
+  
+  .circles{
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #000;
+  }
+  .mobile{
+    display: none;
+  }
+  .html{
+    padding: 50px;
+        width: 500px;
+        height: 600px;
+        display: flex;
+        align-items: center;
+  }
+  .html-slide{
+    display: none;
+  }
+  .mobile-image{
+    display: none;
+  }
+  
+  @media (max-width: 767px) {
+    .circles{
+      display: none;
+    }
+    .mobile-image{
+      display: block;
+      max-width: 450px;
+    height: 300px;
+    border-radius: 10px;
+    }
+    .mobile{
+      display: block;
+    }
+    .html{
+      padding: 20px;
+          max-width: 450px;
+          height: 300px;
+          display: flex;
+          align-items: center;
+    }
+    .html-slide{
+      padding: 30px;
+      max-width: 450px !important;
+      height: 300px !important;
+      display: flex  !important;
+      align-items: center !important;
+    }
+    .slider{
+      display: none;
+    }
+    .slides {
+      display: flex;
+       border: solid 8px #eee; 
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .slides::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    .slides::-webkit-scrollbar-thumb {
+      background: black;
+      border-radius: 10px;
+    }
+    .slides::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .slides > div {
+      scroll-snap-align: center;
+      flex-shrink: 0;
+      width: 100%;
+      height: 400px;
+      margin-right: 10px;
+      border-radius: 5px;
+      background: #eee;
+      transform-origin: center center;
+      transform: scale(1);
+      transition: transform 0.1s;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .right-arrow{
+      display: none;
+    }
+    .left-arrow{
+      display: none;
+    }
+  }
+  
